@@ -426,47 +426,53 @@
 // 2 Мову програмування яку потрібно знайти.
 // Функція повертає масив імен користувачів які вивчають цю мову.
 
-// const students = [{
+// const students = [
+//   {
 //     name: `Lika`,
-//     language: `html`
-
-// }, {
+//     language: `html`,
+//   },
+//   {
 //     name: `Anton`,
-//     language: `css`
-
-// }, {
+//     language: `css`,
+//   },
+//   {
 //     name: `Andriy`,
-//     language: `js`
-
-// }, {
+//     language: `js`,
+//   },
+//   {
 //     name: `Vova`,
-//     language: `html`
-
-// }, {
+//     language: `html`,
+//   },
+//   {
 //     name: `Alina`,
-//     language: `css`
-
-// }, {
+//     language: `css`,
+//   },
+//   {
 //     name: `Egor`,
-//     language: `js`
-
-// }, {
+//     language: `js`,
+//   },
+//   {
 //     name: `Aleksandr`,
-//     langunage: `html`
-
-// }, {
+//     langunage: `html`,
+//   },
+//   {
 //     name: `Taras`,
-//     language: `css`
-
-// }, {
+//     language: `css`,
+//   },
+//   {
 //     name: `Ivan`,
-//     language: `js`
-
-// }, {
+//     language: `js`,
+//   },
+//   {
 //     name: `Make`,
-//     language: `html`
+//     language: `html`,
+//   },
+// ];
 
-// }, ];
+// const getStudentName = (arr, lang) =>
+//   arr.filter(({ language }) => language === lang).map(student => student.name);
+
+// console.log(getStudentName(students, 'js'));
 
 // -----------------------------------------TASK 3------------------------------------------//
 // // Порахувати скільки ззаробив кожен  юзер
@@ -478,23 +484,35 @@
 // // Порахувати загальну суму заробітку всіх робітників()
 // // (функція приймає 1 параметр масив, і повертає загальну суму заробітку всіх робітників);
 
-// // const workers = [{
-// //         name: 'Alex',
-// //         salary: 3500,
-// //         month: 12,
-// //     },
-// //     {
-// //         name: 'Dima',
-// //         salary: 2500,
-// //         month: 9,
-// //     },
-// //     {
-// //         name: 'Oleg',
-// //         salary: 1500,
-// //         month: 36,
-// //     },
-// // ];
+// const workers = [
+//   {
+//     name: 'Alex',
+//     salary: 3500,
+//     month: 12,
+//   },
+//   {
+//     name: 'Dima',
+//     salary: 2500,
+//     month: 9,
+//   },
+//   {
+//     name: 'Oleg',
+//     salary: 1500,
+//     month: 36,
+//   },
+// ];
 
+// const getTotalWorkersSalary = array =>
+//   array.reduce((total, worker) => (total += worker.salary * worker.month), 0);
+
+// console.log(getTotalWorkersSalary(workers));
+
+// const getWorkerSalary = (array, name) => {
+//   const worker = array.find(worker => worker.name === name);
+//   return worker.salary * worker.month;
+// };
+
+// console.log(getWorkerSalary(workers, 'Oleg'));
 // -----------------------------------------TASK 4------------------------------------------//
 // 1 Створити функцію яка буде приймати 2 параметри
 //    1 параметр масив
@@ -585,25 +603,49 @@
 // а ті обє'кти в яких айді співпав видалити з масиву.
 // (Потрібно мутувати масив, створювати новий не потрібно)
 
-// const products = [{
-//     id: 'sku1',
-//     qty: 1,
-// }, {
-//     id: 'sku2',
-//     qty: 2,
-// }, {
-//     id: 'sku3',
-//     qty: 3,
-// }, {
-//     id: 'sku1',
-//     qty: 6,
-// }, {
-//     id: 'sku1',
-//     qty: 8,
-// }, {
-//     id: 'sku2',
-//     qty: 19,
-// }, {
-//     id: 'sku4',
-//     qty: 1,
-// }]
+const products = [
+  {
+    id: 'sku1',
+    qty: 1,
+  },
+  {
+    id: 'sku2',
+    qty: 2,
+  },
+  {
+    id: 'sku3',
+    qty: 3,
+  },
+  {
+    id: 'sku1',
+    qty: 6,
+  },
+  {
+    id: 'sku1',
+    qty: 8,
+  },
+  {
+    id: 'sku2',
+    qty: 19,
+  },
+  {
+    id: 'sku4',
+    qty: 1,
+  },
+];
+
+const getUniqueProducts = array => {
+  for (let product of array) {
+    let productId = product.id;
+    // if (product !== array.find(product => product.id === productId)) {
+
+    //   console.log(product);
+    // }
+    if (array.includes(product.id)) {
+      console.log(product);
+    }
+  }
+};
+
+console.log(getUniqueProducts(products));
+console.log(products);
