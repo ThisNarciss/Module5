@@ -521,12 +521,35 @@
 
 // 2 Порахувати вік всіх юзерів у яких є ключ age.
 
-// const friends = [{ name: "Anna", books: ["Bible", "Harry Potter"], age: 21 },
-//     { name: "Bob", books: ["War and peace", "Romeo and Juliet"], age: 26 },
-//     { name: "Alice", books: ["War and peace", "Romeo and Juliet"]},
-//     { name: "Oleksii", books: ["Bible","War and peace","Harry Potter",  "Romeo and Juliet"], age: 26},
-// ]
+// const friends = [
+//   { name: 'Anna', books: ['Bible', 'Harry Potter'], age: 21 },
+//   { name: 'Bob', books: ['War and peace', 'Romeo and Juliet'], age: 26 },
+//   { name: 'Alice', books: ['War and peace', 'Romeo and Juliet'] },
+//   {
+//     name: 'Oleksii',
+//     books: ['Bible', 'War and peace', 'Harry Potter', 'Romeo and Juliet'],
+//     age: 26,
+//   },
+// ];
 
+// const getUserName = (friends, bookName) => {
+//   return friends.reduce((allName, friend) => {
+//     if (friend.books.includes(bookName)) {
+//       allName += `${friend.name},`;
+//     }
+//     return allName;
+//   }, '');
+// };
+
+// const userAge = friends.reduce((totalAge, friend) => {
+//   if (friend.age) {
+//     totalAge += friend.age;
+//   }
+//   return totalAge;
+// }, 0);
+
+// console.log(userAge);
+// console.log(getUserName(friends, 'Harry Potter'));
 // -----------------------------------------TASK 5------------------------------------------//
 // Потрібно створити 4 методи об'єкту
 // 1 виводить суму на карті (назву вводимо в prompt())
@@ -543,59 +566,79 @@
 // -----------------------------------------TASK 6------------------------------------------//
 // Створити функцію яка буде шукати нарциса. Головна умова нарциса знають всі, нарцис не знає нікого.
 
-// const people1 = [{
-//         name: 'Alex',
-//         know: ['Eva', 'Jhon'],
-//     },
-//     {
-//         name: 'Ivan',
-//         know: ['Jhon', 'Alex']
-//     },
-//     {
-//         name: 'Eva',
-//         know: ['Alex','Jhon']
-//     },
-//     {
-//         name: 'Jhon',
-//         know: [Alex]
-//     },
-// ] //Not found
+// function findNarciss(array) {
+//   for (const person of array) {
+//     for (const iterator of array) {
+//       if (
+//         person.name !== iterator.name &&
+//         iterator.know.includes(person.name) &&
+//         person.know.length < 1 &&
+//         iterator.know.length > 0
+//       ) {
+//         return person.name;
+//       }
+//     }
+//   }
+// }
 
-// const people2 = [{
-//         name: 'Alex',
-//         know: ['Eva', 'Jhon'],
-//     },
-//     {
-//         name: 'Jhon',
-//         know: []
-//     },
-//     {
-//         name: 'Eva',
-//         know: []
-//     },
-//     {
-//         name: 'Ivan',
-//         know: ['Jhon', 'Alex']
-//     },
-// ];// Not found
+// const people1 = [
+//   {
+//     name: 'Alex',
+//     know: ['Eva', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Alex'],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: ['Alex'],
+//   },
+// ]; //Not found
 
-// const people3 = [{
-//         name: 'Alex',
-//         know: ['Eva', 'Jhon'],
-//     },
-//     {
-//         name: 'Jhon',
-//         know: []
-//     },
-//     {
-//         name: 'Eva',
-//         know: ['Alex', 'Jhon']
-//     },
-//     {
-//         name: 'Ivan',
-//         know: ['Jhon', 'Alex']
-//     },
+// const people2 = [
+//   {
+//     name: 'Alex',
+//     know: ['Eva', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: [],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Alex'],
+//   },
+// ]; // Not found
+
+// const people3 = [
+//   {
+//     name: 'Alex',
+//     know: ['Eva', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Alex'],
+//   },
 // ]; // Jhon
+
+// console.log(findNarciss(people1));
 
 // -----------------------------------------TASK 7------------------------------------------//
 // Створити функцію яка приймає 1 параметр масив продуктів і повертає мутований масив
@@ -603,50 +646,47 @@
 // а ті обє'кти в яких айді співпав видалити з масиву.
 // (Потрібно мутувати масив, створювати новий не потрібно)
 
-const products = [
-  {
-    id: 'sku1',
-    qty: 1,
-  },
-  {
-    id: 'sku2',
-    qty: 2,
-  },
-  {
-    id: 'sku3',
-    qty: 3,
-  },
-  {
-    id: 'sku1',
-    qty: 6,
-  },
-  {
-    id: 'sku1',
-    qty: 8,
-  },
-  {
-    id: 'sku2',
-    qty: 19,
-  },
-  {
-    id: 'sku4',
-    qty: 1,
-  },
-];
+// const products = [
+//   {
+//     id: 'sku1',
+//     qty: 1,
+//   },
+//   {
+//     id: 'sku2',
+//     qty: 2,
+//   },
+//   {
+//     id: 'sku3',
+//     qty: 3,
+//   },
+//   {
+//     id: 'sku1',
+//     qty: 6,
+//   },
+//   {
+//     id: 'sku1',
+//     qty: 8,
+//   },
+//   {
+//     id: 'sku2',
+//     qty: 19,
+//   },
+//   {
+//     id: 'sku4',
+//     qty: 1,
+//   },
+// ];
 
-const getUniqueProducts = array => {
-  for (let i = 0; i < array.length; i += 1) {
-    const element = array[i];
-    console.log(element);
-    for (let j = 0; j < array.length; j += 1) {
-      if (array[i].id === array[j].id && i !== j) {
-        console.log(array[j]);
-        array[i].qty += array[j].qty;
-        array.splice(j, 1);
-      }
-    }
-  }
-};
+// const getUniqueProducts = array => {
+//   for (let i = 0; i < array.length; i += 1) {
+//     for (let j = 0; j < array.length; j += 1) {
+//       if (array[i].id === array[j].id && i !== j) {
+//         array[i].qty += array[j].qty;
+//         array.splice(j, 1);
+//       }
+//     }
+//   }
+// };
 
-console.log(getUniqueProducts(products));
-console.log(products);
+// console.log(getUniqueProducts(products));
+// console.log(products);
