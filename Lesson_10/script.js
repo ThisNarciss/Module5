@@ -558,11 +558,36 @@
 // 4 додати на карту (назву вводимо в prompt() та суму в prompt())
 
 // const bankSystem = {
-//     privat : 1000,
-//     mono : 1500,
+//   privat: 1000,
+//   mono: 1500,
+//   getBalance() {
+//     return this[prompt()];
+//   },
+//   addNewCard() {
+//     return (bankSystem[prompt()] = 0);
+//   },
+//   getCashFromCard() {
+//     const getSum = Number(prompt());
+//     const balance = this.getBalance();
+//     if (balance >= getSum) {
+//       return (this[prompt()] -= getSum);
+//     }
+//     return;
+//   },
+//   addCashOnCard() {
+//     const getSum = Number(prompt());
 
-// }
+//     return (this[prompt()] += getSum);
+//   },
+// };
 
+// console.log(bankSystem.getBalance());
+// bankSystem.addNewCard();
+// console.log(bankSystem);
+// bankSystem.getCashFromCard();
+// console.log(bankSystem);
+// bankSystem.addCashOnCard();
+// console.log(bankSystem);
 // -----------------------------------------TASK 6------------------------------------------//
 // Створити функцію яка буде шукати нарциса. Головна умова нарциса знають всі, нарцис не знає нікого.
 
