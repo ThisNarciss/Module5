@@ -635,14 +635,15 @@ const products = [
 ];
 
 const getUniqueProducts = array => {
-  for (let product of array) {
-    let productId = product.id;
-    // if (product !== array.find(product => product.id === productId)) {
-
-    //   console.log(product);
-    // }
-    if (array.includes(product.id)) {
-      console.log(product);
+  for (let i = 0; i < array.length; i += 1) {
+    const element = array[i];
+    console.log(element);
+    for (let j = 0; j < array.length; j += 1) {
+      if (array[i].id === array[j].id && i !== j) {
+        console.log(array[j]);
+        array[i].qty += array[j].qty;
+        array.splice(j, 1);
+      }
     }
   }
 };
